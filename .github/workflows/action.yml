@@ -19,5 +19,9 @@ jobs:
         run: |
           curl -L https://repo.prefix.dev/conda-forge/noarch/fastapi-0.115.12-pyh29332c3_0.conda -o /tmp/fastapi-0.115.12-pyh29332c3_0.conda
           sha256sum /tmp/fastapi-0.115.12-pyh29332c3_0.conda
+
+          sudo mkdir -p /home/conda/feedstock_root/build_artifacts/bld
+          sudo chown $USER /home/conda/feedstock_root/build_artifacts/bld
+
           pixi run rebuild /tmp/fastapi-0.115.12-pyh29332c3_0.conda
           sha256sum ./output/noarch/fastapi-0.115.12-pyh29332c3_0.conda
