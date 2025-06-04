@@ -1,0 +1,22 @@
+name: CI to rebuild fastapi conda package
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: prefix-dev/setup-pixi@v0.8.8
+      - name: Download and rebuild fastapi package
+        run: |
+          curl -L https://repo.prefix.dev/conda-forge/noarch/fastapi-0.115.12-pyh29332c3_0.conda -o /tmp/fastapi-0.115.12-pyh29332c3_0.conda
+          sha256sum /tmp/fastapi-0.115.12-pyh29332c3_0.conda
+          pixi run rebuild /tmp/fastapi-0.115.12-pyh29332c3_0.conda
+          sha256sum ./output/noarch/fastapi-0.115.12-pyh29332c3_0.conda

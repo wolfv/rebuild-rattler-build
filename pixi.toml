@@ -1,0 +1,12 @@
+[workspace]
+authors = ["Wolf Vollprecht <w.vollprecht@gmail.com>"]
+channels = ["conda-forge"]
+name = "rattler-build-rebuild"
+platforms = ["osx-arm64", "linux-64"]
+version = "0.1.0"
+
+[tasks]
+rebuild = { cmd = "rattler-build rebuild --package-file ", description = "Rebuilds a package." }
+
+[dependencies]
+rattler-build = ">=0.42.1,<0.43"
