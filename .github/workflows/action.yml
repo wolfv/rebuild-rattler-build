@@ -10,6 +10,7 @@ on:
 
 jobs:
   rebuild:
+    name: Rebuild fastapi conda package
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
