@@ -10,5 +10,5 @@ rebuild = { cmd = "rattler-build rebuild --package-file ", description = "Rebuil
 diff = { cmd = "diffoscope", description = "Compares two builds." }
 
 [dependencies]
-rattler-build = ">=0.42.1,<0.43"
+rattler-build = "0.39.*"
 diffoscope = ">=297,<298"
