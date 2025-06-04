@@ -25,3 +25,5 @@ jobs:
 
           pixi run rebuild /tmp/fastapi-0.115.12-pyh29332c3_0.conda
           sha256sum ./output/noarch/fastapi-0.115.12-pyh29332c3_0.conda
+
+          pixi run diff /tmp/fastapi-0.115.12-pyh29332c3_0.conda ./output/noarch/fastapi-0.115.12-pyh29332c3_0.conda

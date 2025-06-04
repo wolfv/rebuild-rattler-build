@@ -7,6 +7,8 @@ version = "0.1.0"
 
 [tasks]
 rebuild = { cmd = "rattler-build rebuild --package-file ", description = "Rebuilds a package." }
+diff = { cmd = "diffoscope", description = "Compares two builds." }
 
 [dependencies]
 rattler-build = ">=0.42.1,<0.43"
+diffoscope = ">=297,<298"
